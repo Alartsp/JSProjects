@@ -10,12 +10,19 @@ body{
 
 
 header{
+    position: relative;
     width: 1920px;
     height: 795px;
     margin: 0 auto;
-    background-image: url("../images/bg_all.jpg");
+    background-image: url("../images/light_on_wo_box.jpg");
     background-repeat: no-repeat;
-    position: relative;
+}
+
+.boxes{
+    position: absolute;
+    display: block;
+    bottom: 20px;
+    left: 350px;
 }
 
 .upper_menu{
@@ -35,12 +42,14 @@ header{
 }
 
 .upper_menu li{
+    width: 6em;
     font-size: 1.5rem;
     padding: 0.1rem;
+    list-style-type: none;
 }
 
 .upper_menu li:nth-child(4){
-    padding-right: 200px;
+    margin-right: 200px;
 }
 
 .upper_menu a{
@@ -86,6 +95,7 @@ form label{
     font-family: Arial;
     font-weight: bold;
     text-align: center;
+    box-shadow: 0 0 6px 3px #28140d;
 }
 
 .user{
@@ -166,6 +176,7 @@ form label{
 }
 
 main{
+    position: relative;
     width: 1920px;
     height: 1446px;
     overflow: hidden;
