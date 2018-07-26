@@ -62,8 +62,8 @@ form{
     right: 2%;
 }
 
-.light_on_off, .box_on_off{
-    width: 7rem;
+form button{
+    width: 3rem;
     height: 2rem;
     margin-bottom: 0.3rem;
     border-radius: 5px;
@@ -73,6 +73,19 @@ form{
     background-position: center;
     color: #3a2216;
     font-weight: bold;
+}
+
+form label{
+    display: inline-block;
+    width: 4rem;
+    color: #3a2216;
+    background-image: url("../images/button_bg.jpg");
+    border-radius: 3px;
+    padding: 0.2rem;
+    margin-right: 0.2rem;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
 }
 
 .user{
@@ -138,7 +151,7 @@ form{
     color: #a6896f;
 }
 
-.user_menu li:nth-child(2):hover .under_messages{
+.user_menu li:hover .under_messages{
     display: block;
 }
 
@@ -150,4 +163,13 @@ form{
 
 .user_menu li:hover a{
     color: #e2c7b5;
+}
+
+main{
+    width: 1920px;
+    height: 1446px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-image: url("../images/underground2.jpg");
+    background-repeat: no-repeat;
 }
