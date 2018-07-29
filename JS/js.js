@@ -1,5 +1,5 @@
 $(".light_on").click(function() {
-    $("header").css("background-image", "url(\"images/light_on_wo_box.jpg\")");
+    $("header").css("background-image", "");
 });
 
 $(".light_off").click(function() {
@@ -8,7 +8,7 @@ $(".light_off").click(function() {
 });
 
 $(".box_on").click(function() {
-    $(".boxes").css("display", "block");
+    $(".boxes").css("display", "");
 });
 
 $(".box_off").click(function() {
@@ -16,9 +16,37 @@ $(".box_off").click(function() {
 });
 
 $(".light_on_under").click(function() {
-    $("main").css("background-image", "url(\"images/underground2.jpg\")");
+    $("main").css("background-image", "");
 });
 
-$(".light_offon_under").click(function() {
+$(".light_off_under").click(function() {
     $("main").css("background-image", "none");
 });
+
+
+var arr = [
+    {name: 'div1', width: '50px', height:'50px', backgroundColor: 'red'},
+    {name: 'div2', width: '50px', height:'50px', backgroundColor: 'blue'},
+    {name: 'div3', width: '50px', height:'50px', backgroundColor: 'green'},
+    {name: 'div4', width: '50px', height:'50px', backgroundColor: 'white'}
+    ]
+var ul_el = document.querySelector('.massive > ul');
+var li_el1 = document.createElement('li');
+var li_el2 = document.createElement('li');
+var li_el3 = document.createElement('li');
+var li_el4 = document.createElement('li');
+li_el1.style.cssText = 'width: 200px; height: 200px; background-color: red;';
+li_el2.style.cssText = 'width: 200px; height: 200px; background-color: blue;';
+li_el3.style.cssText = 'width: 200px; height: 200px; background-color: green;';
+li_el4.style.cssText = 'width: 200px; height: 200px; background-color: white;';
+ul_el.appendChild(li_el1);
+ul_el.appendChild(li_el2);
+ul_el.appendChild(li_el3);
+ul_el.appendChild(li_el4);
+
+var ul = document.querySelector('.massive > ul');
+var li = document.createElement('li');
+ul.appendChild(li);
+
+
+
