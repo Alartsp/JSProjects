@@ -33,7 +33,9 @@ var arr =  [
 var ul = document.querySelector('.array > ul');
 for (var i=0; i < arr.length; i++) {
     var li = document.createElement("li");
-    li.innerHTML = arr[i].name;
+    li.style.width = arr[i].width;
+    li.style.height = arr[i].height;
+    li.style.backgroundColor = arr[i].backgroundColor;
     ul.appendChild(li);
 }
 
@@ -60,5 +62,7 @@ function prev() {
     }
     slider.src = images[num];
 }
-
+var timerId = setInterval(function() {
+    next();
+}, 5000);
 
