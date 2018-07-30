@@ -25,6 +25,44 @@ header{
     left: 350px;
 }
 
+.slider1{
+    width: 382px;
+    height: 284px;
+    position: absolute;
+    top: 150px;
+    left: 769px;
+}
+
+button {
+    margin-top:30px;
+    float:left;
+    height:50px;
+}
+img {
+    float:left;
+    margin-right:10px;
+    margin-left:10px;
+}
+
+.prev{
+    width: 20px;
+    height: 20px;
+}
+
+.next{
+    width: 20px;
+    height: 20px;
+}
+
+.frame{
+    width: 382px;
+    height: 284px;
+    position: absolute;
+    top: 150px;
+    left: 769px;
+    z-index: 10;
+}
+
 .upper_menu{
     width: 1300px;
     overflow: hidden;
