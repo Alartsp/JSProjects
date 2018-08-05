@@ -1,3 +1,14 @@
+function createElement(domItem) {
+    var li = document.createElement("li");
+    li.innerHTML = domItem.name;
+    li.style.width = domItem.width;
+    li.style.height = domItem.height;
+    li.style.backgroundColor = domItem.backgroundColor;
+    return li;
+}
+
+
+
 $(".light_on").click(function() {
     $("header").css("background-image", "");
 });
@@ -32,12 +43,23 @@ var arr =  [
 ];
 var ul = document.querySelector('.array > ul');
 for (var i=0; i < arr.length; i++) {
-    var li = document.createElement("li");
-    li.style.width = arr[i].width;
-    li.style.height = arr[i].height;
-    li.style.backgroundColor = arr[i].backgroundColor;
+    var li = createElement(arr[i]);
     ul.appendChild(li);
 }
+//    var li = document.createElement("li");
+//    li.innerHTML = arr[i].name;
+//    li.style.width = arr[i].width;
+//    li.style.height = arr[i].height;
+//    li.style.backgroundColor = arr[i].backgroundColor;
+//    ul.appendChild(li);
+
+
+
+
+var li = createElement(arr[i]);
+ul.appendChild(li);
+
+
 
 var images = [
     'images/img1.jpg',
