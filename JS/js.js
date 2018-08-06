@@ -12,14 +12,14 @@ document.querySelector(".light_upper_btn").addEventListener('click', () => {
     document.querySelector('header').classList.remove('header_on');
     document.querySelector('header').classList.add('header_light_off');
     document.querySelector('.light_upper_btn').innerHTML = 'On';
-    document.querySelector('.boxes').style.display = 'none';
+    document.querySelector('header > img:nth-child(3)').style.display = 'none';
     document.querySelector('.frame').style.display = 'none';
     document.querySelector('.slider').style.display = 'none';
 } else {
     document.querySelector('header').classList.remove('header_light_off');
     document.querySelector('header').classList.add('header_on');
     document.querySelector('.light_upper_btn').innerHTML = 'Off';
-    document.querySelector('.boxes').style.display = '';
+    document.querySelector('header > img:nth-child(3)').style.display = '';
     document.querySelector('.frame').style.display = '';
     document.querySelector('.slider').style.display = '';
 }});
