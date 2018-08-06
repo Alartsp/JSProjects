@@ -8,8 +8,7 @@ body{
     background-color: #000000;
 }
 
-
-header{
+.header_on{
     position: relative;
     width: 1920px;
     height: 795px;
@@ -18,9 +17,24 @@ header{
     background-repeat: no-repeat;
 }
 
+.header_light_off{
+    position: relative;
+    width: 1920px;
+    height: 795px;
+    margin: 0 auto;
+    background-image: none;
+}
+
 .boxes{
     position: absolute;
     display: block;
+    bottom: 20px;
+    left: 350px;
+}
+
+.boxes_off{
+    position: absolute;
+    display: none;
     bottom: 20px;
     left: 350px;
 }
@@ -221,7 +235,7 @@ form label{
     color: #e2c7b5;
 }
 
-main{
+.main_on{
     position: relative;
     width: 1920px;
     height: 1226px;
@@ -229,4 +243,13 @@ main{
     margin: 0 auto;
     background-image: url("../images/underground2.jpg");
     background-repeat: no-repeat;
+}
+
+.main_light_off{
+    position: relative;
+    width: 1920px;
+    height: 1226px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-image: none;
 }

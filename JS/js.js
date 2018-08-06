@@ -7,33 +7,44 @@ function createElement(domItem) {
     return li;
 }
 
+document.querySelector(".light_upper_btn").addEventListener('click', () => {
+    if(document.querySelector('header').classList.contains('header_on')){
+    document.querySelector('header').classList.remove('header_on');
+    document.querySelector('header').classList.add('header_light_off');
+    document.querySelector('.light_upper_btn').innerHTML = 'On';
+    document.querySelector('.boxes').style.display = 'none';
+    document.querySelector('.frame').style.display = 'none';
+    document.querySelector('.slider').style.display = 'none';
+} else {
+    document.querySelector('header').classList.remove('header_light_off');
+    document.querySelector('header').classList.add('header_on');
+    document.querySelector('.light_upper_btn').innerHTML = 'Off';
+    document.querySelector('.boxes').style.display = '';
+    document.querySelector('.frame').style.display = '';
+    document.querySelector('.slider').style.display = '';
+}});
 
+document.querySelector(".box_btn").addEventListener('click', () => {
+if(document.querySelector('header > img:nth-child(3)').classList.contains('boxes')){
+    document.querySelector('header > img:nth-child(3)').classList.remove('boxes');
+    document.querySelector('header > img:nth-child(3)').classList.add('boxes_off');
+    document.querySelector('.box_btn').innerHTML = 'In';
+} else {
+    document.querySelector('header > img:nth-child(3)').classList.remove('boxes_off');
+    document.querySelector('header > img:nth-child(3)').classList.add('boxes');
+    document.querySelector('.box_btn').innerHTML = 'Out';
+}});
 
-$(".light_on").click(function() {
-    $("header").css("background-image", "");
-});
-
-$(".light_off").click(function() {
-    $("header").css("background-image", "none");
-    $(".boxes").css("display", "none");
-});
-
-$(".box_on").click(function() {
-    $(".boxes").css("display", "");
-});
-
-$(".box_off").click(function() {
-    $(".boxes").css("display", "none");
-});
-
-$(".light_on_under").click(function() {
-    $("main").css("background-image", "");
-});
-
-$(".light_off_under").click(function() {
-    $("main").css("background-image", "none");
-});
-
+document.querySelector(".light_under_btn").addEventListener('click', () => {
+    if(document.querySelector('main').classList.contains('main_on')){
+    document.querySelector('main').classList.remove('main_on');
+    document.querySelector('main').classList.add('main_light_off');
+    document.querySelector('.light_under_btn').innerHTML = 'On';
+} else {
+    document.querySelector('main').classList.remove('main_light_off');
+    document.querySelector('main').classList.add('main_on');
+    document.querySelector('.light_under_btn').innerHTML = 'Off';
+}});
 
 var arr =  [
     {name: 'div1', width: '50px', height:'50px', backgroundColor: 'red'},
@@ -52,14 +63,6 @@ for (var i=0; i < arr.length; i++) {
 //    li.style.height = arr[i].height;
 //    li.style.backgroundColor = arr[i].backgroundColor;
 //    ul.appendChild(li);
-
-
-
-
-var li = createElement(arr[i]);
-ul.appendChild(li);
-
-
 
 var images = [
     'images/img1.jpg',
