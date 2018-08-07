@@ -57,12 +57,6 @@ for (var i=0; i < arr.length; i++) {
     var li = createElement(arr[i]);
     ul.appendChild(li);
 }
-//    var li = document.createElement("li");
-//    li.innerHTML = arr[i].name;
-//    li.style.width = arr[i].width;
-//    li.style.height = arr[i].height;
-//    li.style.backgroundColor = arr[i].backgroundColor;
-//    ul.appendChild(li);
 
 var images = [
     'images/img1.jpg',
@@ -91,3 +85,18 @@ var timerId = setInterval(function() {
     next();
 }, 5000);
 
+
+var i = 0;
+$(document).ready(function()
+{     $('body').keydown(function(event)
+    {
+            if (event.keyCode == 37 && i <= 6)
+            {   i++;
+                document.querySelector('.boxes').style.left = 350 - i*50 + 'px';
+            }
+            if (event.keyCode == 39 && i >= -24)
+            {   i--;
+                document.querySelector('.boxes').style.left = 350 - i*50 +'px';
+            }
+    });
+});

@@ -26,10 +26,19 @@ body{
 }
 
 .boxes{
+    width: 315px;
+    height: 180px;
     position: absolute;
     display: block;
     bottom: 20px;
     left: 350px;
+    background-image: url("../images/boxes.png");
+    background-repeat: no-repeat;
+}
+
+.boxes:hover{
+    background-image: url("../images/boxes_move.png");
+    background-repeat: no-repeat;
 }
 
 .boxes_off{
