@@ -12,26 +12,26 @@ document.querySelector(".light_upper_btn").addEventListener('click', () => {
     document.querySelector('header').classList.remove('header_on');
     document.querySelector('header').classList.add('header_light_off');
     document.querySelector('.light_upper_btn').innerHTML = 'On';
-    document.querySelector('header > img:nth-child(3)').style.display = 'none';
+    document.querySelector('header > div:nth-child(3)').style.display = 'none';
     document.querySelector('.frame').style.display = 'none';
     document.querySelector('.slider').style.display = 'none';
 } else {
     document.querySelector('header').classList.remove('header_light_off');
     document.querySelector('header').classList.add('header_on');
     document.querySelector('.light_upper_btn').innerHTML = 'Off';
-    document.querySelector('header > img:nth-child(3)').style.display = '';
+    document.querySelector('header > div:nth-child(3)').style.display = '';
     document.querySelector('.frame').style.display = '';
     document.querySelector('.slider').style.display = '';
 }});
 
 document.querySelector(".box_btn").addEventListener('click', () => {
-if(document.querySelector('header > img:nth-child(3)').classList.contains('boxes')){
-    document.querySelector('header > img:nth-child(3)').classList.remove('boxes');
-    document.querySelector('header > img:nth-child(3)').classList.add('boxes_off');
+if(document.querySelector('header > div:nth-child(3)').classList.contains('boxes')){
+    document.querySelector('header > div:nth-child(3)').classList.remove('boxes');
+    document.querySelector('header > div:nth-child(3)').classList.add('boxes_off');
     document.querySelector('.box_btn').innerHTML = 'In';
 } else {
-    document.querySelector('header > img:nth-child(3)').classList.remove('boxes_off');
-    document.querySelector('header > img:nth-child(3)').classList.add('boxes');
+    document.querySelector('header > div:nth-child(3)').classList.remove('boxes_off');
+    document.querySelector('header > div:nth-child(3)').classList.add('boxes');
     document.querySelector('.box_btn').innerHTML = 'Out';
 }});
 
