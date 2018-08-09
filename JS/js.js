@@ -7,43 +7,52 @@ function createElement(domItem) {
     return li;
 }
 
-document.querySelector(".light_upper_btn").addEventListener('click', () => {
-    if(document.querySelector('header').classList.contains('header_on')){
-    document.querySelector('header').classList.remove('header_on');
-    document.querySelector('header').classList.add('header_light_off');
-    document.querySelector('.light_upper_btn').innerHTML = 'On';
-    document.querySelector('header > div:nth-child(3)').style.display = 'none';
-    document.querySelector('.frame').style.display = 'none';
-    document.querySelector('.slider').style.display = 'none';
-} else {
-    document.querySelector('header').classList.remove('header_light_off');
-    document.querySelector('header').classList.add('header_on');
-    document.querySelector('.light_upper_btn').innerHTML = 'Off';
-    document.querySelector('header > div:nth-child(3)').style.display = '';
-    document.querySelector('.frame').style.display = '';
-    document.querySelector('.slider').style.display = '';
+var header = document.querySelector('header');
+var upperLightBtn = document.querySelector('.light_upper_btn');
+var frame = document.querySelector('.frame');
+var boxes = document.querySelector('header > div:nth-child(3)');
+var slider = document.querySelector('.slider');
+var boxBtn = document.querySelector('.box_btn');
+var underLightBtn = document.querySelector(".light_under_btn");
+var main = document.querySelector('main');
+
+upperLightBtn.addEventListener('click', () => {
+    if(header.classList.contains('header_on')){
+        header.classList.remove('header_on');
+        header.classList.add('header_light_off');
+        upperLightBtn.innerHTML = 'On';
+        boxes.style.display = 'none';
+        frame.style.display = 'none';
+        slider.style.display = 'none';
+}   else {
+        header.classList.remove('header_light_off');
+        header.classList.add('header_on');
+        upperLightBtn.innerHTML = 'Off';
+        boxes.style.display = '';
+        frame.style.display = '';
+        slider.style.display = '';
 }});
 
 document.querySelector(".box_btn").addEventListener('click', () => {
-if(document.querySelector('header > div:nth-child(3)').classList.contains('boxes')){
-    document.querySelector('header > div:nth-child(3)').classList.remove('boxes');
-    document.querySelector('header > div:nth-child(3)').classList.add('boxes_off');
-    document.querySelector('.box_btn').innerHTML = 'In';
-} else {
-    document.querySelector('header > div:nth-child(3)').classList.remove('boxes_off');
-    document.querySelector('header > div:nth-child(3)').classList.add('boxes');
-    document.querySelector('.box_btn').innerHTML = 'Out';
+    if(boxes.classList.contains('boxes')){
+        boxes.classList.remove('boxes');
+        boxes.classList.add('boxes_off');
+        boxBtn.innerHTML = 'In';
+}   else {
+        boxes.classList.remove('boxes_off');
+        boxes.classList.add('boxes');
+        boxBtn.innerHTML = 'Out';
 }});
 
-document.querySelector(".light_under_btn").addEventListener('click', () => {
+underLightBtn.addEventListener('click', () => {
     if(document.querySelector('main').classList.contains('main_on')){
-    document.querySelector('main').classList.remove('main_on');
-    document.querySelector('main').classList.add('main_light_off');
-    document.querySelector('.light_under_btn').innerHTML = 'On';
-} else {
-    document.querySelector('main').classList.remove('main_light_off');
-    document.querySelector('main').classList.add('main_on');
-    document.querySelector('.light_under_btn').innerHTML = 'Off';
+        main.classList.remove('main_on');
+        main.classList.add('main_light_off');
+        underLightBtn.innerHTML = 'On';
+}   else {
+        main.classList.remove('main_light_off');
+        main.classList.add('main_on');
+        underLightBtn.innerHTML = 'Off';
 }});
 
 var arr =  [
@@ -66,7 +75,6 @@ var images = [
 ];
 var num = 0;
 function next() {
-    var slider = document.getElementsByClassName("slider")[0];
     num++;
     if(num >= images.length) {
         num = 0;
@@ -74,7 +82,6 @@ function next() {
     slider.src = images[num];
 }
 function prev() {
-    var slider = document.getElementsByClassName("slider")[0];
     num--;
     if(num < 0) {
         num = images.length-1;
@@ -90,13 +97,13 @@ var i = 0;
 $(document).ready(function()
 {     $('body').keydown(function(event)
     {
-            if (event.keyCode == 37 && i <= 6)
-            {   i++;
-                document.querySelector('.boxes').style.left = 350 - i*50 + 'px';
-            }
-            if (event.keyCode == 39 && i >= -24)
-            {   i--;
-                document.querySelector('.boxes').style.left = 350 - i*50 +'px';
-            }
+        if (event.keyCode == 37 && i <= 6)
+        {   i++;
+            boxes.style.left = 350 - i*50 + 'px';
+        }
+        if (event.keyCode == 39 && i >= -24)
+        {   i--;
+            boxes.style.left = 350 - i*50 +'px';
+        }
     });
 });
