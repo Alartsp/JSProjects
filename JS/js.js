@@ -45,7 +45,7 @@ document.querySelector(".box_btn").addEventListener('click', () => {
 }});
 
 underLightBtn.addEventListener('click', () => {
-    if(document.querySelector('main').classList.contains('main_on')){
+    if(main.classList.contains('main_on')){
         main.classList.remove('main_on');
         main.classList.add('main_light_off');
         underLightBtn.innerHTML = 'On';
@@ -55,18 +55,20 @@ underLightBtn.addEventListener('click', () => {
         underLightBtn.innerHTML = 'Off';
 }});
 
+//add div list
 var arr =  [
     {name: 'div1', width: '50px', height:'50px', backgroundColor: 'red'},
     {name: 'div2', width: '50px', height:'50px', backgroundColor: 'blue'},
     {name: 'div3', width: '50px', height:'50px', backgroundColor: 'green'},
     {name: 'div4', width: '50px', height:'50px', backgroundColor: 'white'}
 ];
-var ul = document.querySelector('.array > ul');
-for (var i=0; i < arr.length; i++) {
-    var li = createElement(arr[i]);
-    ul.appendChild(li);
-}
+//var ul = document.querySelector('.array > ul');
+//for (var i=0; i < arr.length; i++) {
+//    var li = createElement(arr[i]);
+//    ul.appendChild(li);
+//}
 
+// image slider
 var images = [
     'images/img1.jpg',
     'images/img2.jpg',
@@ -92,7 +94,7 @@ var timerId = setInterval(function() {
     next();
 }, 5000);
 
-
+//moving boxes
 var i = 0;
 $(document).ready(function()
 {     $('body').keydown(function(event)
@@ -107,3 +109,57 @@ $(document).ready(function()
         }
     });
 });
+
+var wineStandCatalog =  [
+    {name: 'stand01', image: 'images/catalog/wineStand1.jpg', price: '100$', width: '100px', height: '150px'},
+    {name: 'stand02', image: 'images/catalog/wineStand2.jpg', price: '120$', width: '100px', height: '150px'},
+    {name: 'stand03', image: 'images/catalog/wineStand3.jpg', price: '90$', width: '100px', height: '150px'},
+    {name: 'stand04', image: 'images/catalog/wineStand4.jpg', price: '110$', width: '100px', height: '150px'},
+    {name: 'stand05', image: 'images/catalog/wineStand5.jpg', price: '150$', width: '100px', height: '150px'},
+    {name: 'stand06', image: 'images/catalog/wineStand6.jpg', price: '200$', width: '100px', height: '150px'},
+    {name: 'stand07', image: 'images/catalog/wineStand7.jpg', price: '75$', width: '100px', height: '150px'},
+    {name: 'stand08', image: 'images/catalog/wineStand8.jpg', price: '80$', width: '100px', height: '150px'},
+    {name: 'stand09', image: 'images/catalog/wineStand9.jpg', price: '140$', width: '100px', height: '150px'},
+    {name: 'stand10', image: 'images/catalog/wineStand10.jpg', price: '300$', width: '100px', height: '150px'},
+    {name: 'stand11', image: 'images/catalog/wineStand11.jpg', price: '250$', width: '100px', height: '150px'}
+];
+
+function createElement(domItem) {
+    var li = document.createElement("li");
+    li.innerHTML = domItem.name;
+    li.style.width = domItem.width;
+    li.style.height = domItem.height;
+    li.style.backgroundColor = domItem.backgroundColor;
+    return li;
+}
+//var ul = document.querySelector('.array > ul');
+//for (var i=0; i < arr.length; i++) {
+//    var li = createElement(arr[i]);
+//    ul.appendChild(li);
+//}
+
+function addCatalog(wineStands) {
+    var li = document.createElement("li");
+    var div = document.createElement('div')
+    var pName = document.createElement('p');
+    var img = document.createElement('img');
+    var pPrice = document.createElement('p');
+    pName.innerHTML = wineStands.name;
+    pPrice.innerHTML = wineStands.price;
+    img.src = wineStands.image;
+    li.appendChild(div);
+    div.appendChild(pName);
+    div.appendChild(img);
+    div.appendChild(pPrice);
+    img.style.width = wineStands.width;
+    img.style.height = wineStands.height;
+    div.style.backgroundSize = 'cover';
+    return li;
+
+}
+
+var ul = document.querySelector('.array > ul');
+for (var i=0; i < wineStandCatalog.length; i++) {
+    var li = addCatalog(wineStandCatalog[i]);
+    ul.appendChild(li);
+}
