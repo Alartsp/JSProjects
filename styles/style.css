@@ -262,3 +262,16 @@ form label{
     margin: 0 auto;
     background-image: none;
 }
+
+.array{
+    color: white;
+}
+
+.tableView{
+    display: table;
+
+}
+
+.matrixView{
+    display: flex;
+}
