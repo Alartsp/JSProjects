@@ -140,7 +140,7 @@ function createElement(domItem) {
 
 function addCatalog(wineStands) {
     var li = document.createElement("li");
-    var div = document.createElement('div')
+    var div = document.createElement('div');
     var pName = document.createElement('p');
     var img = document.createElement('img');
     var pPrice = document.createElement('p');
@@ -161,22 +161,22 @@ function addCatalog(wineStands) {
     return li;
 }
 
-var ul = document.querySelector('.array > ul');
+var mainDiv = document.querySelector('main > div');
+var ul = document.createElement('ul');
 for (var i=0; i < wineStandCatalog.length; i++) {
     var li = addCatalog(wineStandCatalog[i]);
+    mainDiv.appendChild(ul);
     ul.appendChild(li);
 }
 
 var changeStyleBtn = document.querySelector('.view_btn');
-var goods = ul;
 
 
 changeStyleBtn.addEventListener('click', () => {
-    goods.classList.remove('list');
-    if(goods.classList.contains('tableView')){
-    goods.classList.remove('tableView');
-    goods.classList.add('matrixView');
+    if(ul.classList.contains('tableView')){
+    ul.classList.remove('tableView');
+    ul.classList.add('matrixView');
 }   else {
-    goods.classList.remove('matrixView');
-    goods.classList.add('tableView');
+    ul.classList.remove('matrixView');
+    ul.classList.add('tableView');
 }});
