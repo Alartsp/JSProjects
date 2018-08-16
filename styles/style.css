@@ -265,6 +265,21 @@ form label{
 
 .array{
     color: white;
+    overflow: auto;
+    height: 1226px;
+}
+
+.array div{
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.array img{
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
 }
 
 .tableView{
