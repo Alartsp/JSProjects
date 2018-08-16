@@ -141,23 +141,35 @@ function createElement(domItem) {
 function addTable(wineStands) {
     //var table = document.createElement('table');
     var tr = document.createElement('tr');
-    var th = document.createElement('th');
-    var td = document.createElement('td');
+    var td1 = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
     var div = document.createElement('div');
     var img = document.createElement('img');
     img.src = wineStands.image;
     //table.appendChild(tr);
-    tr.appendChild(th);
-    th.innerHTML = Object.keys(wineStandCatalog);
-    tr.appendChild(td);
-    td.appendChild(img);
-    tr.appendChild(td);
-    td.innerHTML = wineStands.price;
+    td1.innerHTML = wineStands.name;
+    td2.appendChild(img);
+    td3.innerHTML = wineStands.price;
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
     return tr;
 }
 
 var mainDiv = document.querySelector('main > div');
 var table = document.createElement('table');
+var th1 = document.createElement('th');
+var th2 = document.createElement('th');
+var th3 = document.createElement('th');
+var trm = document.createElement('tr');
+th1.innerHTML = 'Name';
+th2.innerHTML = 'Photo';
+th3.innerHTML = 'Price';
+trm.appendChild(th1);
+trm.appendChild(th2);
+trm.appendChild(th3);
+table.appendChild(trm);
 for (var i=0; i < wineStandCatalog.length; i++) {
     var tr = addTable(wineStandCatalog[i]);
     mainDiv.appendChild(table);
@@ -195,6 +207,7 @@ changeStyleBtn.addEventListener('click', () => {
     if(ul.classList.contains('tableView')){
     ul.classList.remove('tableView');
     ul.classList.add('matrixView');
+    main.removeAttribute('table');
 }   else {
     ul.classList.remove('matrixView');
     ul.classList.add('tableView');
