@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #000000;
 }
 
-.header_on{
+.header_on {
     position: relative;
     width: 1920px;
     height: 795px;
@@ -17,7 +17,7 @@ body{
     background-repeat: no-repeat;
 }
 
-.header_light_off{
+.header_light_off {
     position: relative;
     width: 1920px;
     height: 795px;
@@ -25,7 +25,7 @@ body{
     background-image: none;
 }
 
-.boxes{
+.boxes {
     width: 315px;
     height: 180px;
     position: absolute;
@@ -36,19 +36,19 @@ body{
     background-repeat: no-repeat;
 }
 
-.boxes:hover{
+.boxes:hover {
     background-image: url("../images/boxes_move.png");
     background-repeat: no-repeat;
 }
 
-.boxes_off{
+.boxes_off {
     position: absolute;
     display: none;
     bottom: 20px;
     left: 350px;
 }
 
-header div:first-child{
+header div:first-child {
     position: absolute;
     width: 382px;
     height: 284px;
@@ -56,7 +56,7 @@ header div:first-child{
     left: 769px;
 }
 
-.slider{
+.slider {
     width: 382px;
     height: 284px;
     position: absolute;
@@ -65,7 +65,7 @@ header div:first-child{
     z-index: 0;
 }
 
-.prev{
+.prev {
     width: 100px;
     height: 284px;
     position: absolute;
@@ -75,7 +75,7 @@ header div:first-child{
     opacity: 0;
 }
 
-.next{
+.next {
     width: 100px;
     height: 284px;
     position: absolute;
@@ -85,7 +85,7 @@ header div:first-child{
     opacity: 0;
 }
 
-.frame{
+.frame {
     width: 382px;
     height: 284px;
     position: absolute;
@@ -94,7 +94,7 @@ header div:first-child{
     z-index: 1;
 }
 
-.upper_menu{
+.upper_menu {
     width: 1300px;
     overflow: hidden;
     margin: 0 auto;
@@ -102,7 +102,7 @@ header div:first-child{
     padding: 10px 0;
 }
 
-.upper_menu ul{
+.upper_menu ul {
     width: 1300px;
     display: inline-flex;
     justify-content: space-between;
@@ -110,37 +110,37 @@ header div:first-child{
     font-weight: bold;
 }
 
-.upper_menu li{
+.upper_menu li {
     width: 6em;
     font-size: 1.5rem;
     padding: 0.1rem;
     list-style-type: none;
 }
 
-.upper_menu li:nth-child(4){
+.upper_menu li:nth-child(4) {
     margin-right: 200px;
 }
 
-.upper_menu a{
+.upper_menu a {
     text-decoration: none;
     color: #a6896f;
 }
 
-.upper_menu a:hover{
+.upper_menu a:hover {
     color: #e2c7b5;
 }
 
-.upper_menu a:active{
+.upper_menu a:active {
     color: #3a2216;
 }
 
-form{
+form {
     position: absolute;
     top: 5%;
     right: 2%;
 }
 
-form button{
+form button {
     width: 3rem;
     height: 2rem;
     margin-bottom: 0.3rem;
@@ -153,7 +153,7 @@ form button{
     font-weight: bold;
 }
 
-form label{
+form label {
     display: inline-block;
     width: 4rem;
     color: #3a2216;
@@ -167,13 +167,13 @@ form label{
     box-shadow: 0 0 6px 3px #28140d;
 }
 
-.user{
+.user {
     margin: 3rem 0 0 2rem;
     border-radius: 5px;
     width: 220px;
 }
 
-.user a{
+.user a {
     text-decoration: none;
     color: #a6896f;
     font-family: Arial;
@@ -182,7 +182,7 @@ form label{
     margin: auto 0;
 }
 
-.user_menu{
+.user_menu {
     list-style-type: none;
     background-image: url("../images/bg_menu.jpg");
     background-repeat: no-repeat;
@@ -192,7 +192,7 @@ form label{
     box-shadow: 0 0 20px 10px #000000;
 }
 
-.user_menu li{
+.user_menu li {
     background-image: url("../images/bg_menu_item.jpg");
     background-repeat: no-repeat;
     width: 218px;
@@ -202,15 +202,15 @@ form label{
     margin-bottom: 1px;
 }
 
-.user_menu li:nth-child(1){
+.user_menu li:nth-child(1) {
      border-radius: 5px 5px 0 0;
 }
 
-.user_menu li:nth-child(4){
+.user_menu li:nth-child(4) {
     border-radius: 0 0 5px 5px;
 }
 
-.under_messages{
+.under_messages {
     position: absolute;
     left: 100%;
     top: 40px;
@@ -221,30 +221,30 @@ form label{
     box-shadow: 0 0 20px 10px #000000;
 }
 
-.under_messages li:nth-child(3){
+.under_messages li:nth-child(3) {
     border-radius: 0 0 5px 5px;
 }
 
-.under_messages a{
+.under_messages a {
     font-size: 1rem;
     color: #a6896f;
 }
 
-.user_menu li:hover .under_messages{
+.user_menu li:hover .under_messages {
     display: block;
 }
 
-.user_menu li:hover{
+.user_menu li:hover {
     background-image: url("../images/bg_menu.jpg");
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.user_menu li:hover a{
+.user_menu li:hover a {
     color: #e2c7b5;
 }
 
-.main_on{
+.main_on {
     position: relative;
     width: 1920px;
     height: 1226px;
@@ -254,7 +254,7 @@ form label{
     background-repeat: no-repeat;
 }
 
-.main_light_off{
+.main_light_off {
     position: relative;
     width: 1920px;
     height: 1226px;
@@ -263,37 +263,50 @@ form label{
     background-image: none;
 }
 
-.array{
+.array {
     color: white;
     overflow: auto;
     height: 1226px;
 }
 
-.array div{
+.array div {
     width: 100px;
     height: 150px;
     overflow: hidden;
     text-align: center;
 }
 
-.array td{
+.array td {
     width: 100px;
     height: 150px;
     overflow: hidden;
     text-align: center;
+    border: 2px double sandybrown;
 }
 
-.array img{
+.array th {
+    font-weight: bold;
+    width: 100px;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    border: 2px double sandybrown;
+}
+
+.array img {
     max-width: 100%;
     max-height: 100%;
     vertical-align: middle;
 }
 
-.tableView{
-    display: table;
-
+.array table {
+    border: 2px double sandybrown;
 }
 
-.matrixView{
+.tableView {
+    display: table;
+}
+
+.matrixView {
     display: flex;
 }
