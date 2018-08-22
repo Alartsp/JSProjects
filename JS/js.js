@@ -106,8 +106,8 @@ var timerId = setInterval(function() {
 }, 5000);
 
 //moving boxes
-var i = 0;
 $(document).ready(function() {
+    var i = 0;
     $('body').keydown(function(event) {
         if (event.keyCode == 37 && i <= 6) {
             i++;
