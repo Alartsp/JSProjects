@@ -1,22 +1,9 @@
-function createElement(domItem) {
-    var li = document.createElement("li");
-    li.innerHTML = domItem.name;
-    li.style.width = domItem.width;
-    li.style.height = domItem.height;
-    li.style.backgroundColor = domItem.backgroundColor;
-    return li;
-}
-
-var header = document.querySelector('header');
-var upperLightBtn = document.querySelector('.light_upper_btn');
-var frame = document.querySelector('.frame');
 var boxes = document.querySelector('header > div:nth-child(3)');
 var slider = document.querySelector('.slider');
-var boxBtn = document.querySelector('.box_btn');
-var underLightBtn = document.querySelector(".light_under_btn");
-var main = document.querySelector('main');
-
+var upperLightBtn = document.querySelector('.light_upper_btn');
 upperLightBtn.addEventListener('click', ()=>{
+    var header = document.querySelector('header');
+    var frame = document.querySelector('.frame');
     if (header.classList.contains('header_on')) {
         header.classList.remove('header_on');
         header.classList.add('header_light_off');
@@ -35,7 +22,8 @@ upperLightBtn.addEventListener('click', ()=>{
 }
 );
 
-document.querySelector(".box_btn").addEventListener('click', ()=>{
+var boxBtn = document.querySelector('.box_btn');
+boxBtn.addEventListener('click', ()=>{
     if (boxes.classList.contains('boxes')) {
         boxes.classList.remove('boxes');
         boxes.classList.add('boxes_off');
@@ -48,7 +36,9 @@ document.querySelector(".box_btn").addEventListener('click', ()=>{
 }
 );
 
+var underLightBtn = document.querySelector(".light_under_btn");
 underLightBtn.addEventListener('click', ()=>{
+    var main = document.querySelector('main');
     if (main.classList.contains('main_on')) {
         main.classList.remove('main_on');
         main.classList.add('main_light_off');
