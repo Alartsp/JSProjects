@@ -2,7 +2,9 @@ UpLightSwitch();
 UnderLightSwitch();
 BoxSwitch();
 BoxMoving();
-
+sliderNext();
+sliderPrev();
+autoSlider();
 
 
 
@@ -13,23 +15,23 @@ function UpLightSwitch() {
     var upperLightBtn = document.querySelector('.light_upper_btn');
     upperLightBtn.addEventListener('click', ()=>{
         var header = document.querySelector('header');
-    var frame = document.querySelector('.frame');
-    if (header.classList.contains('header_on')) {
-        header.classList.remove('header_on');
-        header.classList.add('header_light_off');
-        upperLightBtn.innerHTML = 'On';
-        boxes.style.display = 'none';
-        frame.style.display = 'none';
-        slider.style.display = 'none';
-    } else {
-        header.classList.remove('header_light_off');
-        header.classList.add('header_on');
-        upperLightBtn.innerHTML = 'Off';
-        boxes.style.display = '';
-        frame.style.display = '';
-        slider.style.display = '';
+        var frame = document.querySelector('.frame');
+        if (header.classList.contains('header_on')) {
+            header.classList.remove('header_on');
+            header.classList.add('header_light_off');
+            upperLightBtn.innerHTML = 'On';
+            boxes.style.display = 'none';
+            frame.style.display = 'none';
+            slider.style.display = 'none';
+        } else {
+            header.classList.remove('header_light_off');
+            header.classList.add('header_on');
+            upperLightBtn.innerHTML = 'Off';
+            boxes.style.display = '';
+            frame.style.display = '';
+            slider.style.display = '';
+        }
     }
-}
 );
 };
 
@@ -37,16 +39,16 @@ function UnderLightSwitch() {
     var underLightBtn = document.querySelector(".light_under_btn");
     underLightBtn.addEventListener('click', ()=>{
         var main = document.querySelector('main');
-    if (main.classList.contains('main_on')) {
-        main.classList.remove('main_on');
-        main.classList.add('main_light_off');
-        underLightBtn.innerHTML = 'On';
-    } else {
-        main.classList.remove('main_light_off');
-        main.classList.add('main_on');
-        underLightBtn.innerHTML = 'Off';
+        if (main.classList.contains('main_on')) {
+            main.classList.remove('main_on');
+            main.classList.add('main_light_off');
+            underLightBtn.innerHTML = 'On';
+        } else {
+            main.classList.remove('main_light_off');
+            main.classList.add('main_on');
+            underLightBtn.innerHTML = 'Off';
+        }
     }
-}
 );
 };
 
@@ -54,15 +56,15 @@ function BoxSwitch() {
     var boxBtn = document.querySelector('.box_btn');
     boxBtn.addEventListener('click', ()=>{
         if (boxes.classList.contains('boxes')) {
-        boxes.classList.remove('boxes');
-        boxes.classList.add('boxes_off');
-        boxBtn.innerHTML = 'In';
-    } else {
-        boxes.classList.remove('boxes_off');
-        boxes.classList.add('boxes');
-        boxBtn.innerHTML = 'Out';
+            boxes.classList.remove('boxes');
+            boxes.classList.add('boxes_off');
+            boxBtn.innerHTML = 'In';
+        } else {
+            boxes.classList.remove('boxes_off');
+            boxes.classList.add('boxes');
+            boxBtn.innerHTML = 'Out';
+        }
     }
-}
 );
 };
 
@@ -82,27 +84,41 @@ function BoxMoving() {
     });
 };
 
-    var images = ['images/img1.jpg', 'images/img2.jpg', 'images/img3.jpg', 'images/img4.jpg'];
-    var num = 0;
-    function next() {
+var images = ['images/img1.jpg', 'images/img2.jpg', 'images/img3.jpg', 'images/img4.jpg'];
+var num = 0;
+
+function sliderNext() {
+    var nextBtn = document.querySelector('.next');
+    nextBtn.addEventListener('click', ()=> {
+        num++;
+    if (num >= images.length) {
+        num = 0;
+    }
+    slider.src = images[num];
+});
+};
+
+function sliderPrev() {
+    var prevBtn = document.querySelector('.prev');
+    prevBtn.addEventListener('click', ()=> {
+        num--;
+    if (num < 0) {
+        num = images.length - 1;
+    }
+    slider.src = images[num];
+});
+};
+
+function autoSlider() {
+    function autoNext() {
         num++;
         if (num >= images.length) {
             num = 0;
         }
         slider.src = images[num];
     }
-    function prev() {
-        num--;
-        if (num < 0) {
-            num = images.length - 1;
-        }
-        slider.src = images[num];
-    }
-    var timerId = setInterval(function() {
-        next();
-    }, 5000);
-
-
+    let timerId = setInterval(autoNext, 2000);
+};
 
 var wineStandCatalog = [{
     name: 'stand01',
@@ -150,24 +166,22 @@ var wineStandCatalog = [{
     price: '250$'
 }];
 
-    function addTable(wineStands) {
-        //var table = document.createElement('table');
-        var tr = document.createElement('tr');
-        var td1 = document.createElement('td');
-        var td2 = document.createElement('td');
-        var td3 = document.createElement('td');
-        var div = document.createElement('div');
-        var img = document.createElement('img');
-        img.src = wineStands.image;
-        //table.appendChild(tr);
-        td1.innerHTML = wineStands.name;
-        td2.appendChild(img);
-        td3.innerHTML = wineStands.price;
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        return tr;
-    };
+function addTable(wineStands) {
+    var tr = document.createElement('tr');
+    var td1 = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+    var div = document.createElement('div');
+    var img = document.createElement('img');
+    img.src = wineStands.image;
+    td1.innerHTML = wineStands.name;
+    td2.appendChild(img);
+    td3.innerHTML = wineStands.price;
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    return tr;
+};
     var mainDiv = document.querySelector('main > div');
     var table = document.createElement('table');
     var th1 = document.createElement('th');
@@ -186,6 +200,7 @@ var wineStandCatalog = [{
         mainDiv.appendChild(table);
         table.appendChild(tr);
     };
+
 
 
     function addCatalog(wineStands) {
