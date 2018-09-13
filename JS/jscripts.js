@@ -5,6 +5,9 @@ BoxMoving();
 sliderNext();
 sliderPrev();
 autoSlider();
+//tableCreation();
+//listCreation();
+//chViewBtn();
 
 
 
@@ -166,7 +169,8 @@ var wineStandCatalog = [{
     price: '250$'
 }];
 
-function addTable(wineStands) {
+//function tableCreation() {
+    function addTable(wineStands) {
     var tr = document.createElement('tr');
     var td1 = document.createElement('td');
     var td2 = document.createElement('td');
@@ -200,9 +204,9 @@ function addTable(wineStands) {
         mainDiv.appendChild(table);
         table.appendChild(tr);
     };
+//};
 
-
-
+//function listCreation() {
     function addCatalog(wineStands) {
         var li = document.createElement("li");
         var div = document.createElement('div');
@@ -218,15 +222,15 @@ function addTable(wineStands) {
         div.appendChild(pPrice);
         return li;
     };
-
     var ul = document.createElement('ul');
     for (var i = 0; i < wineStandCatalog.length; i++) {
         var li = addCatalog(wineStandCatalog[i]);
         mainDiv.appendChild(ul);
         ul.appendChild(li);
     };
+//};
 
-
+//function chViewBtn() {
     var changeStyleBtn = document.querySelector('.view_btn');
     var mainTable = document.querySelector('.array > table');
     var mainUl = document.querySelector('.array > ul');
@@ -243,6 +247,8 @@ function addTable(wineStands) {
     }
 }
 );
+//};
+
 
 
 
