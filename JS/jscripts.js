@@ -94,20 +94,19 @@ function BoxSwitch() {
 }
 
 function BoxMoving() {
-    $(document).ready(function() {
-        var i = 0;
-        $('body').keydown(function(event) {
-            if (event.keyCode == 37 && i <= 6) {
-                i++;
-                boxes.style.left = 350 - i * 50 + 'px';
-            }
-            if (event.keyCode == 39 && i >= -24) {
-                i--;
-                boxes.style.left = 350 - i * 50 + 'px';
-            }
-        });
+    var i = 0;
+    document.body.addEventListener('keydown', () => {
+        event.preventDefault();
+        if (event.keyCode == 37 && i <= 6) {
+            i++;
+            boxes.style.left = 350 - i * 50 + 'px';
+        }
+        if (event.keyCode == 39 && i >= -24) {
+            i--;
+            boxes.style.left = 350 - i * 50 + 'px';
+        }
     });
-};
+}
 
 function sliderNext() {
     var nextBtn = document.querySelector('.next');
