@@ -5,18 +5,16 @@ BoxMoving();
 sliderNext();
 sliderPrev();
 autoSlider();
-//tableCreation();
-//listCreation();
-//chViewBtn();
-
-
+tableCreation();
+listCreation();
+chViewBtn();
 
 var boxes = document.querySelector('header > div:nth-child(3)');
 var slider = document.querySelector('.slider');
 
 function UpLightSwitch() {
     var upperLightBtn = document.querySelector('.light_upper_btn');
-    upperLightBtn.addEventListener('click', ()=>{
+    upperLightBtn.addEventListener('click', () => {
         var header = document.querySelector('header');
         var frame = document.querySelector('.frame');
         if (header.classList.contains('header_on')) {
@@ -34,9 +32,8 @@ function UpLightSwitch() {
             frame.style.display = '';
             slider.style.display = '';
         }
-    }
-);
-};
+    });
+}
 
 function UnderLightSwitch() {
     var underLightBtn = document.querySelector(".light_under_btn");
@@ -123,69 +120,25 @@ function autoSlider() {
     let timerId = setInterval(autoNext, 2000);
 };
 
-var wineStandCatalog = [{
-    name: 'stand01',
-    image: 'images/catalog/wineStand1.jpg',
-    price: '100$'
-}, {
-    name: 'stand02',
-    image: 'images/catalog/wineStand2.jpg',
-    price: '120$'
-}, {
-    name: 'stand03',
-    image: 'images/catalog/wineStand3.jpg',
-    price: '90$'
-}, {
-    name: 'stand04',
-    image: 'images/catalog/wineStand4.jpg',
-    price: '110$'
-}, {
-    name: 'stand05',
-    image: 'images/catalog/wineStand5.jpg',
-    price: '150$'
-}, {
-    name: 'stand06',
-    image: 'images/catalog/wineStand6.jpg',
-    price: '200$'
-}, {
-    name: 'stand07',
-    image: 'images/catalog/wineStand7.jpg',
-    price: '75$'
-}, {
-    name: 'stand08',
-    image: 'images/catalog/wineStand8.jpg',
-    price: '80$'
-}, {
-    name: 'stand09',
-    image: 'images/catalog/wineStand9.jpg',
-    price: '140$'
-}, {
-    name: 'stand10',
-    image: 'images/catalog/wineStand10.jpg',
-    price: '300$'
-}, {
-    name: 'stand11',
-    image: 'images/catalog/wineStand11.jpg',
-    price: '250$'
-}];
+function tableCreation() {
+    var data = service.getCatalogData();
 
-//function tableCreation() {
     function addTable(wineStands) {
-    var tr = document.createElement('tr');
-    var td1 = document.createElement('td');
-    var td2 = document.createElement('td');
-    var td3 = document.createElement('td');
-    var div = document.createElement('div');
-    var img = document.createElement('img');
-    img.src = wineStands.image;
-    td1.innerHTML = wineStands.name;
-    td2.appendChild(img);
-    td3.innerHTML = wineStands.price;
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    return tr;
-};
+        var tr = document.createElement('tr');
+        var td1 = document.createElement('td');
+        var td2 = document.createElement('td');
+        var td3 = document.createElement('td');
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = wineStands.image;
+        td1.innerHTML = wineStands.name;
+        td2.appendChild(img);
+        td3.innerHTML = wineStands.price;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        return tr;
+    };
     var mainDiv = document.querySelector('main > div');
     var table = document.createElement('table');
     var th1 = document.createElement('th');
@@ -199,14 +152,15 @@ var wineStandCatalog = [{
     trm.appendChild(th2);
     trm.appendChild(th3);
     table.appendChild(trm);
-    for (var i = 0; i < wineStandCatalog.length; i++) {
-        var tr = addTable(wineStandCatalog[i]);
+    for (var i = 0; i < data.length; i++) {
+        var tr = addTable(data[i]);
         mainDiv.appendChild(table);
         table.appendChild(tr);
     };
-//};
+};
 
-//function listCreation() {
+function listCreation() {
+    var data = service.getCatalogData();
     function addCatalog(wineStands) {
         var li = document.createElement("li");
         var div = document.createElement('div');
@@ -221,33 +175,33 @@ var wineStandCatalog = [{
         div.appendChild(img);
         div.appendChild(pPrice);
         return li;
-    };
+    }
+    var mainDiv = document.querySelector('main > div');
     var ul = document.createElement('ul');
-    for (var i = 0; i < wineStandCatalog.length; i++) {
-        var li = addCatalog(wineStandCatalog[i]);
+    for (var i = 0; i < data.length; i++) {
+        var li = addCatalog(data[i]);
         mainDiv.appendChild(ul);
         ul.appendChild(li);
-    };
-//};
+    }
+};
 
-//function chViewBtn() {
+function chViewBtn() {
     var changeStyleBtn = document.querySelector('.view_btn');
     var mainTable = document.querySelector('.array > table');
     var mainUl = document.querySelector('.array > ul');
     mainTable.style.display = 'none';
     mainUl.style.display = 'block';
-    changeStyleBtn.addEventListener('click', ()=>{
+    changeStyleBtn.addEventListener('click', () => {
         var arrayDiv = document.querySelector('.array');
-    if ((mainTable.style.display == 'none') && (mainUl.style.display == 'block')) {
-        mainTable.style.display = 'table';
-        mainUl.style.display = 'none';
-    } else if ((mainTable.style.display == 'table') && (mainUl.style.display == 'none')){
-        mainTable.style.display = 'none';
-        mainUl.style.display = 'block';
-    }
-}
-);
-//};
+        if ((mainTable.style.display == 'none') && (mainUl.style.display == 'block')) {
+            mainTable.style.display = 'table';
+            mainUl.style.display = 'none';
+        } else if ((mainTable.style.display == 'table') && (mainUl.style.display == 'none')){
+            mainTable.style.display = 'none';
+            mainUl.style.display = 'block';
+        }
+    });
+};
 
 
 
