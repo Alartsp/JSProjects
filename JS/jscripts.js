@@ -1,3 +1,33 @@
+var upperMenu = [{
+    name: 'About Us',
+    url: '#'
+}, {
+    name: 'Our Focus',
+    url: '#'
+}, {
+    name: 'Portfolio',
+    url: '#'
+}, {
+    name: 'Our Team',
+    url: '#'
+}, {
+    name: 'Work Steps',
+    url: '#'
+}, {
+    name: 'Pricing',
+    url: '#'
+}, {
+    name: 'Blog',
+    url: '#'
+}, {
+    name: 'Contact',
+    url: '#'
+}];
+var images = ['images/img1.jpg', 'images/img2.jpg', 'images/img3.jpg', 'images/img4.jpg'];
+var num = 0;
+var boxes = document.querySelector('header > div:nth-child(3)');
+var slider = document.querySelector('.slider');
+
 UpLightSwitch();
 UnderLightSwitch();
 BoxSwitch();
@@ -8,9 +38,6 @@ autoSlider();
 tableCreation();
 listCreation();
 chViewBtn();
-
-var boxes = document.querySelector('header > div:nth-child(3)');
-var slider = document.querySelector('.slider');
 
 function UpLightSwitch() {
     var upperLightBtn = document.querySelector('.light_upper_btn');
@@ -37,7 +64,7 @@ function UpLightSwitch() {
 
 function UnderLightSwitch() {
     var underLightBtn = document.querySelector(".light_under_btn");
-    underLightBtn.addEventListener('click', ()=>{
+    underLightBtn.addEventListener('click', () => {
         var main = document.querySelector('main');
         if (main.classList.contains('main_on')) {
             main.classList.remove('main_on');
@@ -48,13 +75,12 @@ function UnderLightSwitch() {
             main.classList.add('main_on');
             underLightBtn.innerHTML = 'Off';
         }
-    }
-);
-};
+    });
+}
 
 function BoxSwitch() {
     var boxBtn = document.querySelector('.box_btn');
-    boxBtn.addEventListener('click', ()=>{
+    boxBtn.addEventListener('click', () => {
         if (boxes.classList.contains('boxes')) {
             boxes.classList.remove('boxes');
             boxes.classList.add('boxes_off');
@@ -64,9 +90,8 @@ function BoxSwitch() {
             boxes.classList.add('boxes');
             boxBtn.innerHTML = 'Out';
         }
-    }
-);
-};
+    });
+}
 
 function BoxMoving() {
     $(document).ready(function() {
@@ -84,30 +109,27 @@ function BoxMoving() {
     });
 };
 
-var images = ['images/img1.jpg', 'images/img2.jpg', 'images/img3.jpg', 'images/img4.jpg'];
-var num = 0;
-
 function sliderNext() {
     var nextBtn = document.querySelector('.next');
-    nextBtn.addEventListener('click', ()=> {
+    nextBtn.addEventListener('click', () => {
         num++;
-    if (num >= images.length) {
-        num = 0;
-    }
-    slider.src = images[num];
-});
-};
+        if (num >= images.length) {
+            num = 0;
+        }
+        slider.src = images[num];
+    });
+}
 
 function sliderPrev() {
     var prevBtn = document.querySelector('.prev');
-    prevBtn.addEventListener('click', ()=> {
+    prevBtn.addEventListener('click', () => {
         num--;
-    if (num < 0) {
-        num = images.length - 1;
-    }
-    slider.src = images[num];
-});
-};
+        if (num < 0) {
+            num = images.length - 1;
+        }
+        slider.src = images[num];
+    });
+}
 
 function autoSlider() {
     function autoNext() {
@@ -118,7 +140,7 @@ function autoSlider() {
         slider.src = images[num];
     }
     let timerId = setInterval(autoNext, 2000);
-};
+}
 
 function tableCreation() {
     var data = service.getCatalogData();
@@ -138,7 +160,7 @@ function tableCreation() {
         tr.appendChild(td2);
         tr.appendChild(td3);
         return tr;
-    };
+    }
     var mainDiv = document.querySelector('main > div');
     var table = document.createElement('table');
     var th1 = document.createElement('th');
@@ -156,8 +178,8 @@ function tableCreation() {
         var tr = addTable(data[i]);
         mainDiv.appendChild(table);
         table.appendChild(tr);
-    };
-};
+    }
+}
 
 function listCreation() {
     var data = service.getCatalogData();
@@ -183,7 +205,7 @@ function listCreation() {
         mainDiv.appendChild(ul);
         ul.appendChild(li);
     }
-};
+}
 
 function chViewBtn() {
     var changeStyleBtn = document.querySelector('.view_btn');
@@ -201,33 +223,4 @@ function chViewBtn() {
             mainUl.style.display = 'block';
         }
     });
-};
-
-
-
-
-var upperMenu = [{
-    name: 'About Us',
-    url: '#'
-}, {
-    name: 'Our Focus',
-    url: '#'
-}, {
-    name: 'Portfolio',
-    url: '#'
-}, {
-    name: 'Our Team',
-    url: '#'
-}, {
-    name: 'Work Steps',
-    url: '#'
-}, {
-    name: 'Pricing',
-    url: '#'
-}, {
-    name: 'Blog',
-    url: '#'
-}, {
-    name: 'Contact',
-    url: '#'
-}];
+}
