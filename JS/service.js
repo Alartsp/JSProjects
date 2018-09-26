@@ -45,22 +45,51 @@ var service = (function() {
             image: 'images/catalog/wineStand11.jpg',
             price: '250$'
         }];
-
         return data;
     }
 
     function getImages() {
-        var data = [];
+        var data = ['images/img1.jpg', 'images/img2.jpg', 'images/img3.jpg', 'images/img4.jpg'];
+        return data;
+    }
+
+    function getUpperMenuData() {
+        var data = [{
+            name: 'About Us',
+            url: '#'
+        }, {
+            name: 'Our Focus',
+            url: '#'
+        }, {
+            name: 'Portfolio',
+            url: '#'
+        }, {
+            name: 'Our Team',
+            url: '#'
+        }, {
+            name: 'Work Steps',
+            url: '#'
+        }, {
+            name: 'Pricing',
+            url: '#'
+        }, {
+            name: 'Blog',
+            url: '#'
+        }, {
+            name: 'Contact',
+            url: '#'
+        }];
         return data;
     }
 
     return {
         getCatalogData: getCatalogData,
-        getIamgesData: getImages
+        getIamgesData: getImages,
+        getUpperMenuData: getUpperMenuData
     }
 })();
 
-function getCatalogData() {
+/*function getCatalogData() {
     var data = [{
         name: 'stand01',
         image: 'images/catalog/wineStand1.jpg',
@@ -108,4 +137,4 @@ function getCatalogData() {
     }];
 
     return data;
-}
+}*/
