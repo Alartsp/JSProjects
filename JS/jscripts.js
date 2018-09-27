@@ -1,29 +1,3 @@
-var upperMenu = [{
-    name: 'About Us',
-    url: '#'
-}, {
-    name: 'Our Focus',
-    url: '#'
-}, {
-    name: 'Portfolio',
-    url: '#'
-}, {
-    name: 'Our Team',
-    url: '#'
-}, {
-    name: 'Work Steps',
-    url: '#'
-}, {
-    name: 'Pricing',
-    url: '#'
-}, {
-    name: 'Blog',
-    url: '#'
-}, {
-    name: 'Contact',
-    url: '#'
-}];
-var images = ['images/img1.jpg', 'images/img2.jpg', 'images/img3.jpg', 'images/img4.jpg'];
 var num = 0;
 var boxes = document.querySelector('header > div:nth-child(3)');
 var slider = document.querySelector('.slider');
@@ -111,32 +85,35 @@ function BoxMoving() {
 function sliderNext() {
     var nextBtn = document.querySelector('.next');
     nextBtn.addEventListener('click', () => {
+        var data = service.getImages();
         num++;
-        if (num >= images.length) {
+        if (num >= data.length) {
             num = 0;
         }
-        slider.src = images[num];
+        slider.src = data[num];
     });
 }
 
 function sliderPrev() {
     var prevBtn = document.querySelector('.prev');
     prevBtn.addEventListener('click', () => {
+        var data = service.getImages();
         num--;
         if (num < 0) {
-            num = images.length - 1;
+            num = data.length - 1;
         }
-        slider.src = images[num];
+        slider.src = data[num];
     });
 }
 
 function autoSlider() {
     function autoNext() {
+        var data = service.getImages();
         num++;
-        if (num >= images.length) {
+        if (num >= data.length) {
             num = 0;
         }
-        slider.src = images[num];
+        slider.src = data[num];
     }
     let timerId = setInterval(autoNext, 2000);
 }
