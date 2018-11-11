@@ -84,7 +84,7 @@ var service = (function() {
 
     return {
         getCatalogData: getCatalogData,
-        getIamgesData: getImages,
+        getImagesData: getImages,
         getUpperMenuData: getUpperMenuData
     }
 })();
