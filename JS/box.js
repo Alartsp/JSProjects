@@ -1,18 +1,16 @@
 var Box = (function() {
-    var boxes = document.querySelector('header > div:nth-child(3)');
+    var boxes = document.querySelector('.boxes');
     function initSwitch() {
-        var boxBtn = document.querySelector('.box_btn');
+        var boxBtn = document.querySelector('.header-box-btn');
         boxBtn.addEventListener('click', () => {
             if (boxes.classList.contains('boxes')) {
-            boxes.classList.remove('boxes');
-            boxes.classList.add('boxes_off');
-            boxBtn.innerHTML = 'In';
-        } else {
-            boxes.classList.remove('boxes_off');
-            boxes.classList.add('boxes');
-            boxBtn.innerHTML = 'Out';
-        }
-    });
+                boxes.classList.remove('boxes');
+                boxBtn.innerHTML = 'In';
+            } else {
+                boxes.classList.add('boxes');
+                boxBtn.innerHTML = 'Out';
+            }
+        });
     }
     function initMove() {
         var i = 0;
@@ -45,7 +43,5 @@ var Box = (function() {
         init: initBoxModule,
         hide: hide,
         show: show
-
-
     }
 })()
